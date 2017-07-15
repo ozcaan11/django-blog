@@ -1,0 +1,15 @@
+{% extends 'blog/base.html' %}
+{% block content %}
+    <div class="blog-post">
+        <h2 class="blog-post-title">Who am I?</h2>
+        <p class="blog-post-meta">
+            <small>@ozcaan11</small>
+        </p>
+        <p>{{ setting.biography|linebreaks }}</p>
+        <div class="panel-footer">
+            <p class="text-center">{{ setting.bottom_message }}</p>
+        </div>
+        <hr>
+    </div>
+{% endblock %}
+{% block scripts %}{% endblock %}

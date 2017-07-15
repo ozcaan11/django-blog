@@ -1,0 +1,26 @@
+{% extends 'blog/base.html' %}
+{% load crispy_forms_tags %}
+{% block content %}
+    <div class="blog-post">
+        <h2 class="blog-post-title">Get in touch</h2>
+        <hr>
+        {% if back_message %}
+            <div class="alert alert-info" role="alert">
+                <p>{{ back_message }}</p>
+            </div>
+        {% endif %}
+        {% if form %}
+            <form role="form" action="" method="post">
+                {% csrf_token %}
+                {{ form | crispy }}
+                <input type="submit" class="btn btn-primary" value="Send now"/>
+            </form>
+        {% endif %}
+        <br>
+        <div class="panel-footer">
+            <p class="text-center">Take care!</p>
+        </div>
+        <hr>
+    </div>
+{% endblock %}
+{% block scripts %}{% endblock %}

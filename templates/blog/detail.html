@@ -1,0 +1,19 @@
+{% extends 'blog/base.html' %}
+{% block content %}
+    <div class="blog-post">
+        <h2 class="blog-post-title">{{ post.title }}</h2>
+        <p class="blog-post-meta">
+            <small>{{ post.created }}</small>
+        </p>
+        <p>{{ post.content|linebreaks }} </p>
+        <div class="panel-footer">
+            {% for tag in post.tag.all %}
+                    <a href="/t/{{ tag|lower }}">
+                        <span class="label label-default">{{ tag | lower}}</span>
+                    </a>
+            {% endfor %}
+        </div>
+        <hr>
+    </div>
+{% endblock %}
+{% block scripts %}{% endblock %}

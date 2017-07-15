@@ -1,0 +1,52 @@
+{% load staticfiles %}
+{% load sidebar %}
+{% load header %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Özcan Yarımdünya (@ozcaan11) | Personel Website">
+    <meta name="author" content="Özcan Yarıdünya">
+    <link rel="icon" href="{% static 'blog/img/favicon.ico' %}">
+
+    <title>Özcan Yarımdünya | Personel Website</title>
+
+    {% include 'blog/includes/link_head.html' %}
+</head>
+<body>
+{% include 'blog/includes/navbar.html' %}
+<div class="container">
+    {% blog_header %}
+    <div class="row">
+        <div class="col-sm-8 blog-main">
+            {% block content %}{% endblock %}
+        </div>
+        {% sidebar_tags %}
+    </div>
+</div>
+{% include 'blog/includes/footer.html' %}
+
+{% include 'blog/includes/link_body.html' %}
+{% block scripts %}{% endblock %}
+<script>
+    var url = window.location.pathname;
+    var c = '';
+    if (url.match('^/$')) {
+        c = $('#home');
+        c.addClass('active')
+    }
+    else if (url.match('^/about/$')) {
+        c = $('#about');
+        c.addClass('active')
+    }
+    else if (url.match('^/contact/$')) {
+        c = $('#contact');
+        c.addClass('active')
+    } else {
+        //
+    }
+</script>
+</body>
+</html>

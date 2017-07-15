@@ -1,0 +1,33 @@
+<div class="col-sm-3 col-sm-offset-1 blog-sidebar blog-sidebar">
+    <div class="sidebar-module sidebar-module-inset">
+        <h4>Social links</h4>
+        <nav>
+            <ul class="pagination pagination-lg">
+                <li><a href="https://www.facebook.com/ozcaan11" target="_blank">
+                    <i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                <li><a href="https://twitter.com/ozcaan11" target="_blank">
+                    <i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                <li><a href="https://www.linkedin.com/in/ozcaan11/" target="_blank">
+                    <i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+                <li><a href="https://github.com/ozcaan11" target="_blank">
+                    <i class="fa fa-github" aria-hidden="true"></i></a></li>
+            </ul>
+        </nav>
+    </div>
+    <div class="sidebar-module sidebar-module-inset">
+        <h4>Categories</h4>
+        <nav>
+            <ul class="pagination">
+                {% for tag in tags %}
+                    <li><a href="/t/{{ tag.name|lower }}">{{ tag.name|lower }}
+                        <small>({{ tag.post_set.count }})</small>
+                    </a></li>
+                {% endfor %}
+            </ul>
+        </nav>
+    </div>
+    <div class="sidebar-module sidebar-module-inset">
+        <h4>Corner</h4>
+        <p>{{ setting.corner }}</p>
+    </div>
+</div>
