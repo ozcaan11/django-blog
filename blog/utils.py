@@ -4,7 +4,7 @@ import string
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django.utils.text import slugify
 
-DONT_USE = ['create', 'main', 'blog']
+DONT_USE = ['create', 'src', 'blog']
 
 
 def random_string_generator(size=10, chars=string.ascii_lowercase + string.digits):
