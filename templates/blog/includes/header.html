@@ -1,5 +1,5 @@
 <div class="blog-header">
-        <h1 class="blog-title">{{ setting.header }}</h1>
-    <p class="lead blog-description">{{ setting.sub_header }}</p>
+    <h1 class="blog-title">{{ setting.header }}</h1>
+    <p class="lead blog-description">&nbsp;{% if setting.sub_header %}{{ setting.sub_header }}{% endif %}</p>
     {% include 'blog/includes/search_form.html' %}
 </div>

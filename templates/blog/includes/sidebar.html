@@ -19,7 +19,7 @@
         <nav>
             <ul class="pagination">
                 {% for tag in tags %}
-                    <li><a href="/t/{{ tag.name|lower }}">{{ tag.name|lower }}
+                    <li><a href="/t/{{ tag.slug }}">{{ tag.name|lower }}
                         <small>({{ tag.post_set.count }})</small>
                     </a></li>
                 {% endfor %}

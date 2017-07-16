@@ -30,7 +30,7 @@ def home(request):
 
 # @cache_page(60 * 1)
 def tag(request, key):
-    posts = Post.objects.filter(tag__name__iexact=key)
+    posts = Post.objects.filter(tag__slug__iexact=key).order_by('-created')
 
     page = request.GET.get('page')
     posts = paginate(posts, page, 5)

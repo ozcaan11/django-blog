@@ -29,14 +29,16 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
-    'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'blog.apps.BlogConfig',
-    'crispy_forms'
+    'crispy_forms',
+    'jet.dashboard',
+    'jet',
+    'django.contrib.admin',
 ]
 
 MIDDLEWARE = [
@@ -126,3 +128,9 @@ MEDIA_URL = "/media/"
 MEDIA_ROOT = os.path.join(BASE_DIR, "_files/cdn/media")
 
 CRISPY_TEMPLATE_PACK = 'bootstrap3'
+
+JET_SIDE_MENU_COMPACT = True
+
+JET_SIDE_MENU_CUSTOM_APPS = [
+    ('blog', ['__all__', ]),
+]

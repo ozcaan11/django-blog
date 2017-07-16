@@ -8,7 +8,7 @@
         <p>{{ post.content|linebreaks }} </p>
         <div class="panel-footer">
             {% for tag in post.tag.all %}
-                    <a href="/t/{{ tag|lower }}">
+                    <a href="/t/{{ tag.slug }}">
                         <span class="label label-default">{{ tag | lower}}</span>
                     </a>
             {% endfor %}
